@@ -38,3 +38,28 @@ pip manage.py migrate
 ```bash
 python manage.py runserver
 ```
+
+## How to use
+
+1. Create an user :
+```bash
+python manage.py createsuperuser
+```
+
+
+2. Retrieve a token using the `/api/token-auth/` endpoint :
+
+- body parameters :
+    - `username` : your user username
+    - `password` : yout user password
+- response body :
+    - `token` : your user token
+
+
+3. Use `/api/runs/` endpoint :
+- set the `Authorization` header as `Token <your_token>`
+- create a run :
+    - `start_date` : the run start date and time
+    - `end_date` : the run end date and time
+    - `distance` : the run distance in km
+    - `burnt_calories`: the burnt calories amount during the run

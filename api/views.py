@@ -10,7 +10,7 @@ class RunViewSet(viewsets.ModelViewSet):
     """
         API endpoint that allows runs to be created.
     """
-    queryset = Run.objects.all().order_by('-date_joined')
+    queryset = Run.objects.all().order_by('-start_date')
     serializer_class = RunSerializer
 
     def create(self, request):
