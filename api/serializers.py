@@ -12,3 +12,11 @@ class RunSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Run
         fields = ['start_date', 'end_date', 'distance', 'burnt_calories', 'runner']
+
+    def validate(self, data):
+        """
+            Check that start_date is before end_date.
+        """
+        if data['start_date'] > data['end_date']:
+            raise serializers.ValidationError("`end_date` must occur after `start_date`")
+        return data
