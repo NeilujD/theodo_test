@@ -59,7 +59,7 @@ python manage.py createsuperuser
 3. Use `/api/runs/` endpoint :
 - set the `Authorization` header as `Token <your_token>`
 - create a run :
-    - method : `POST``
+    - method : `POST`
     - parameters :
         - `start_date` : the run start date and time (`DateTime`)
         - `end_date` : the run end date and time (`DateTime`)
