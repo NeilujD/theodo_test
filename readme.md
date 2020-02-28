@@ -8,10 +8,24 @@ Expose basic API endpoints permitting to manage running statistics per user.
 
 ## Install
 
-1. git clone the project (TODO : add the clone command line)
+1. git clone the project :
+
+```bash
+git clone git@github.com:NeilujD/theodo_test.git
+```
+
+
 2. install dependencies :
+
 ```bash
 pip install -r requirements.txt
+```
+
+
+3. run migrations :
+
+```bash
+pip manage.py migrate
 ```
 
 ## Run locally
@@ -20,6 +34,7 @@ pip install -r requirements.txt
 
 
 2. Start the server
+
 ```bash
 python manage.py runserver
 ```
