@@ -17,6 +17,16 @@ class RunSerializer(serializers.HyperlinkedModelSerializer):
         """
             Check that start_date is before end_date.
         """
-        if data['start_date'] > data['end_date']:
+
+        start_date = data.get('start_date')
+        end_date = data.get('end_date')
+        runner = data.get('runner')
+
+        if start_date > end_date:
             raise serializers.ValidationError("`end_date` must occur after `start_date`")
+
+        runs = Run.objects.filter(end_date__gte=start_date, runner=runner)
+        if len(runs) > 0:
+            raise serializers.ValidationError("new user run have to start after the last one")
+
         return data
