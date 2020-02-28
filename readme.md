@@ -59,7 +59,7 @@ python manage.py createsuperuser
 3. Use `/api/runs/` endpoint :
 - set the `Authorization` header as `Token <your_token>`
 - create a run :
-    - `start_date` : the run start date and time
-    - `end_date` : the run end date and time
-    - `distance` : the run distance in km
-    - `burnt_calories`: the burnt calories amount during the run
+    - `start_date` : the run start date and time (`DateTime`)
+    - `end_date` : the run end date and time (`DateTime`)
+    - `distance` : the run distance in km (`Float`)
+    - `burnt_calories`: the burnt calories amount during the run (`Integer`)
