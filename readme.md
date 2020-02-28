@@ -59,7 +59,17 @@ python manage.py createsuperuser
 3. Use `/api/runs/` endpoint :
 - set the `Authorization` header as `Token <your_token>`
 - create a run :
-    - `start_date` : the run start date and time (`DateTime`)
-    - `end_date` : the run end date and time (`DateTime`)
-    - `distance` : the run distance in km (`Float`)
-    - `burnt_calories`: the burnt calories amount during the run (`Integer`)
+    - method : `POST``
+    - parameters :
+        - `start_date` : the run start date and time (`DateTime`)
+        - `end_date` : the run end date and time (`DateTime`)
+        - `distance` : the run distance in km (`Float`)
+        - `burnt_calories`: the burnt calories amount during the run (`Integer`)
+
+4. Use `/api/statistics/` endpoint :
+- set the `Authorization` header as `Token <your_token>`
+- retrieve the runner statistics :
+    - method : `GET`
+    - parameters :
+        - `start_date` : the filter start date (`DateTime`)
+        - `end_date` : the filter end date (`DateTime`)

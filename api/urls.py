@@ -10,5 +10,6 @@ router.register(r'runs', views.RunViewSet)
 
 urlpatterns = [
     path('token-auth/', tokenviews.obtain_auth_token),
+    path('statistics/', views.StatisticsView.as_view()),
     path('', include(router.urls))
 ]
