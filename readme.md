@@ -3,6 +3,11 @@
 Expose basic API endpoints permitting to manage running statistics per user.
 
 
+## Notes
+
+The app uses SQLite by default. If you want to use another database you should read the [Django docs](https://docs.djangoproject.com/en/3.0/ref/databases/) about databases management. You will have to edit the `theodo_test/settings.py` file.
+
+
 ## Requirements
 
 - Have Python >= 3.7 installed
