@@ -2,9 +2,11 @@
 
 Expose basic API endpoints permitting to manage running statistics per user.
 
+
 ## Requirements
 
 - Have Python >= 3.7 installed
+
 
 ## Install
 
@@ -28,9 +30,10 @@ pip install -r requirements.txt
 pip manage.py migrate
 ```
 
+
 ## Run locally
 
-1. use `SECRETE_KEY` environment variable ([see Django docs](https://docs.djangoproject.com/fr/3.0/ref/settings/#secret-key))
+1. set up the `SECRETE_KEY` environment variable ([see Django docs](https://docs.djangoproject.com/fr/3.0/ref/settings/#secret-key))
 
 
 2. Start the server
@@ -38,6 +41,7 @@ pip manage.py migrate
 ```bash
 python manage.py runserver
 ```
+
 
 ## How to use
 
@@ -66,6 +70,7 @@ python manage.py createsuperuser
         - `distance` : the run distance in km (`Float`)
         - `burnt_calories`: the burnt calories amount during the run (`Integer`)
 
+
 4. Use `/api/statistics/` endpoint :
 - set the `Authorization` header as `Token <your_token>`
 - retrieve the runner statistics :
@@ -73,3 +78,9 @@ python manage.py createsuperuser
     - parameters :
         - `start_date` : the filter start date (`DateTime`)
         - `end_date` : the filter end date (`DateTime`)
+
+
+## TODO
+
+- add tests
+- override the `django-rest-framework` `ModelViewSet` class to filter queryset using the authenticated user
